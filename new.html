@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<link rel="stylesheet"
+href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<form>
+<center><h1> welcome</h1></center><br>
+<label>enter name</label><input type="text" id="name" name="name" required >
+<br>
+<br>
+<label>enter the email</label><input type="email" id="email" name="email"  placeholder="xyx@qwmail.com" bgcolor="black"m >
+<br>
+<br>
+<label>enter the password </label><input type="password" id="password" name="password" title="peasew" ><br>
+<br>
+<br>
+
+<center><button type="button" id="submit">submit</button></center>
+</form>
+
+<script type="text/javascript">
+	$(function(){
+		$('#submit').click(function(){
+
+
+			var a=document.getElementById('name').value;
+			var b=document.getElementById('email').value;
+			var c=document.getElementById('password').value;
+					
+							
+			$.ajax({
+			url:'insert.php',
+			type:'post',
+			data:{
+				"name":a,
+				"email":b,
+				"password":c
+			},
+			success:function(){
+				alert('yes')
+
+			},
+				error:function(response){
+					alert('no')
+				}
+		})
+
+
+
+		})
+		
+	})
+</script>
+
+</body>
+</html>
